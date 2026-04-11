@@ -1,0 +1,250 @@
+/* =========================
+   🔥 OVERLAY (SMOOTH FADE + BLUR)
+========================= */
+.pm-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0.65);
+
+  z-index: 9999;
+
+  animation: overlayFade 0.5s ease forwards;
+}
+
+/* =========================
+   🔥 CARD (SMOOTH + BOUNCE)
+========================= */
+.pm-card {
+  position: relative;
+
+  width: 400px;
+  padding: 48px 30px;
+
+  text-align: center;
+
+  border-radius: 20px;
+
+  animation: cardPop 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* LIGHT */
+[data-theme="light"] .pm-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+}
+
+/* DARK */
+[data-theme="dark"] .pm-card {
+  background: #1e1e1e;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.85);
+}
+
+/* =========================
+   ❌ CLOSE BUTTON
+========================= */
+.pm-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0.05);
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+[data-theme="dark"] .pm-close-btn {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.pm-close-btn:hover {
+  background: #ef4444;
+  color: #fff;
+  transform: rotate(90deg) scale(1.05);
+}
+
+/* =========================
+   👤 AVATAR
+========================= */
+.pm-avatar {
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  margin-bottom: 16px;
+
+  border: 3px solid var(--primary);
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pm-avatar:hover {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.4),
+    0 0 0 4px rgba(245,158,11,0.2);
+
+  filter: brightness(1.1);
+}
+
+/* =========================
+   TEXT
+========================= */
+.pm-name {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.pm-role {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.pm-info p {
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+/* =========================
+   🔥 IMAGE OVERLAY
+========================= */
+.pm-img-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.95);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10000;
+
+  animation: overlayFade 0.3s ease;
+}
+
+/* =========================
+   📦 IMAGE WRAPPER
+========================= */
+.pm-img-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* =========================
+   🖼 IMAGE
+========================= */
+.pm-full-img {
+  max-width: 80vw;
+  max-height: 85vh;
+
+  border-radius: 14px;
+
+  animation: cardPop 0.35s ease;
+}
+
+/* =========================
+   ❌ CLOSE BUTTON (IMAGE)
+========================= */
+.img-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+
+  backdrop-filter: blur(6px);
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  z-index: 2;
+}
+
+.img-close:hover {
+  background: #ef4444;
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* =========================
+   ✨ SMOOTH ANIMATIONS
+========================= */
+
+/* overlay fade + blur feel */
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes cardPop {
+  0% {
+    transform: scale(0.92) translateY(20px); /* 👈 less jump */
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+/* MOBILE FIX */
+@media (max-width: 480px) {
+  .pm-card {
+    width: 80%;
+    padding: 30px 16px;
+  }
+
+  .pm-avatar {
+    width: 85px;
+    height: 85px;
+  }
+
+  .pm-name {
+    font-size: 18px;
+  }
+
+  .pm-info p {
+    font-size: 13px;
+  }
+}

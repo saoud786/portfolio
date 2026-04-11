@@ -1,0 +1,40 @@
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  margin-top: 80px;
+  padding: 20px 8%;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-color);
+}
+
+/* CONTAINER */
+.footer-container {
+  display: flex;
+  justify-content: center;  /* change this */
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* TEXT */
+.footer-text {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* SOCIAL */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,143 @@
+
+/* ================================
+   GLOBAL RESET
+================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================================
+   🌞 LIGHT THEME (DEFAULT)
+================================ */
+:root {
+  --bg-color: #f5f7ff;
+  --text-color: #111111;
+
+  --card-bg: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.1);
+
+  --primary: #6366f1;  /* 🔵 BLUE */
+
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  /* ✅ GRADIENT (UNCHANGED) */
+  --nav-gradient: linear-gradient(120deg, #8490ff, #946afe, #b868e6c3);
+
+  /* ✅ FIXED: LIGHT MODE ICON COLOR */
+  --menu-icon-color: #6366f1; /* 🔵 purple */
+}
+/* ================================
+   🌙 DARK THEME (ORANGE)
+================================ */
+[data-theme="dark"] {
+  --bg-color: #0f0f0f;
+  --text-color: #e5e5e5;
+
+  --card-bg: #181818;
+  --border-color: rgba(255,255,255,0.08);
+
+  --primary: #f19900fb;  /* 🟠 ORANGE */
+
+  --glass-bg: rgba(255,255,255,0.05);
+  --shadow-light: 0 6px 30px rgba(0,0,0,0.6);
+
+  /* --nav-gradient: linear-gradient(120deg, #d78b07, #ffb84d); */
+  
+  --nav-gradient: linear-gradient(120deg, #e68601, #f2ab41ed);
+
+  /* ✅ FIXED: DARK MODE ICON COLOR */
+  --menu-icon-color: #f59e0b; /* 🟠 orange */
+}
+
+/* ================================
+   BODY
+================================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+
+
+
+
+
+/* =========================
+   💻 DESKTOP DARK SOCIAL ICON FIX
+========================= */
+
+[data-theme="dark"] .social-icons a {
+  background: rgba(255,255,255,0.05) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.4),
+    inset 0 1px 2px rgba(255,255,255,0.05);
+}
+
+/* HOVER */
+[data-theme="dark"] .social-icons a:hover {
+  background: rgba(255,255,255,0.08) !important;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
+/* =========================
+   📱 MOBILE THEME SUPPORT
+========================= */
+
+@media (max-width: 768px) {
+
+  /* 🌙 DARK MODE ONLY */
+  [data-theme="dark"] .navbar {
+    background: #111 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  [data-theme="dark"] .nav-links {
+    background: #111 !important;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  [data-theme="dark"] .nav-links a {
+    color: #fff !important;
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+  }
+
+  /* 🔥 ACTIVE LINK (ORANGE) */
+  [data-theme="dark"] .nav-links a.active {
+    background: var(--nav-gradient) !important;
+    color: #111 !important;
+  }
+
+  /* SOCIAL ICONS */
+  [data-theme="dark"] .mobile-bottom .social-icons a {
+    background: rgba(255,255,255,0.05) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+  }
+
+  /* THEME BUTTON */
+  [data-theme="dark"] .menu-theme .theme-toggle {
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+  }
+
+  [data-theme="dark"] .theme-text {
+    color: #fff !important;
+  }
+
+}

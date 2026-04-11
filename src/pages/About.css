@@ -1,0 +1,342 @@
+/* =========================
+   SECTION (ANIMATION)
+========================= */
+.about {
+  padding: 110px 8% 80px;
+  background: var(--bg-color);
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.7s ease;
+}
+
+.about.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+.about-left {
+  flex: 1;
+  max-width: 560px;
+}
+
+/* TITLE */
+.about-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  margin-top: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.about-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary), transparent);
+  opacity: 0.8;
+}
+
+/* INTRO */
+.about-intro {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.name-highlight {
+  color: var(--primary);
+}
+
+/* TEXT */
+.about-text {
+  font-size: 16.5px;
+  line-height: 1.7;
+  opacity: 0.75;
+  margin-bottom: 14px;
+  letter-spacing: 0.2px;
+}
+
+/* =========================
+   🔥 MY EXPERTISE (NEW)
+========================= */
+.extra-heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 78px;
+  margin-bottom: 16px;
+ 
+  color: var(--primary);
+}
+
+.about-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.extra-box {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* glow */
+.extra-box::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  background: linear-gradient(120deg, var(--primary), transparent);
+  opacity: 0.12;
+  z-index: -1;
+}
+
+.extra-box:hover {
+  transform: translateY(-5px);
+}
+
+.extra-box h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.extra-box p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+.profile-card {
+  width: 360px;
+  padding: 28px;
+  border-radius: 22px;
+  margin-top: 50px;
+
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-light);
+
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 22px;
+  background: linear-gradient(120deg, var(--primary), transparent);
+  opacity: 0.12;
+  z-index: -1;
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+.card-top {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-top h3 {
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.card-top p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.card-box {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+[data-theme="dark"] .card-box {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.card-box h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* EDUCATION */
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.edu-row strong {
+  font-size: 15px;
+}
+
+.edu-row p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.edu-row span {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* STATS */
+.stats-box {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.stats-box h4 {
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.stats-box p {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+.profile-card > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.profile-card > *:nth-child(1) { animation-delay: 0.2s; }
+.profile-card > *:nth-child(2) { animation-delay: 0.4s; }
+.profile-card > *:nth-child(3) { animation-delay: 0.6s; }
+
+.about-extra .extra-box {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.about-extra .extra-box:nth-child(1) { animation-delay: 0.8s; }
+.about-extra .extra-box:nth-child(2) { animation-delay: 1s; }
+.about-extra .extra-box:nth-child(3) { animation-delay: 1.2s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   LIGHT MODE FIX
+========================= */
+[data-theme="light"] .extra-box {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+/* =========================
+   MOBILE FIX (PERFECT ALIGN)
+========================= */
+@media (max-width: 768px) {
+
+  .about {
+    padding: 60px 16px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center; /* 🔥 important */
+    text-align: center;
+    gap: 40px;
+  }
+
+  /* RIGHT SIDE CENTER */
+  .about-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 🔥 main fix */
+  }
+
+  /* CARD CENTER FIX */
+  .profile-card {
+    width: 100%;
+    max-width: 320px; /* 🔥 control width */
+    margin: 0 auto;   /* 🔥 center */
+  }
+
+  .about-extra {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* TEXT */
+  .about-title {
+    font-size: 26px;
+  }
+
+  .about-intro {
+    font-size: 18px;
+  }
+
+}
