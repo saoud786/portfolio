@@ -26,8 +26,8 @@ const Projects = () => {
       ],
       tech: ["React", "CSS", "Responsive Design"],
       image: portImg,
-      live: "#",
-      github: "#"
+      live: "https://portfolio-ec6ksvh1q-saoudali381-2113s-projects.vercel.app/",
+      github: "https://github.com/saoud786/portfolio"
     },
     {
       title: "Weather App",
