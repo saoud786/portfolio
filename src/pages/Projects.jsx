@@ -37,8 +37,8 @@ const Projects = () => {
       ],
       tech: ["JavaScript", "API", "HTML", "CSS"],
       image: weatherImg,
-      live: "#",
-      github: "#"
+      live: "https://weather-app-seven-kappa-26.vercel.app/",
+      github: "https://github.com/saoud786/Weather-App"
     }
   ];
 
