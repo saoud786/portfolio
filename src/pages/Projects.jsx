@@ -73,7 +73,7 @@ const Projects = () => {
       ],
       tech: ["React", "CSS", "Responsive Design"],
       image: portImg,
-      live: "https://portfolio-ec6ksvh1q-saoudali381-2113s-projects.vercel.app/",
+      live: "https://https://portfolio-delta-khaki-ou28ynmoop.vercel.app/#projects/",
       github: "https://github.com/saoud786/portfolio"
     },
     // 🔥 NEW PROJECT
