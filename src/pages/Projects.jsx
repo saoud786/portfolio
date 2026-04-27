@@ -1,78 +1,126 @@
 import "./Projects.css";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useState } from "react";
 
 import emoImg from "../assets/emo.png";
 import portImg from "../assets/port.png";
-import weatherImg from "../assets/weather.png"; // 👈 add weather image
+import weatherImg from "../assets/weather.png";
+import gameImg from "../assets/gamemind.png"; // ✅ NEW IMAGE
 
 const Projects = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleDetails = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   const data = [
     {
       title: "EmoConnect",
       desc: "Real-time anonymous chat app with AI-based moderation system.",
-      features: [
-    
+      details: [
+        "Anonymous real-time chat",
+        "AI abuse detection",
+        "Admin moderation dashboard",
+        "User ban/unban system",
+        "Firebase backend"
       ],
       tech: ["React", "Firebase", "Firestore", "Auth"],
       image: emoImg,
       live: "https://emo-connect-ten.vercel.app/",
       github: "https://github.com/saoud786/EmoConnect"
     },
+      {
+      title: "GameMind",
+      desc: "Interactive brain game app to improve memory, focus, and thinking skills.",
+      details: [
+        "Memory & logic based games",
+        "Score tracking system",
+        "Smooth UI interactions",
+        "Responsive design",
+        "Engaging gameplay experience"
+      ],
+      tech: ["React", "JavaScript", "CSS"],
+      image: gameImg,
+      live: "https://game-mind-iota.vercel.app/",
+      github: "https://github.com/saoud786/GameMind"
+    },
+
+    {
+      title: "Weather App",
+      desc: "Real-time weather app using API integration.",
+      details: [
+        "Live weather API",
+        "City search feature",
+        "Temperature display",
+        "Clean UI",
+        "Fast response"
+      ],
+      tech: ["JavaScript", "API", "HTML", "CSS"],
+      image: weatherImg,
+      live: "https://weather-app-seven-kappa-26.vercel.app/",
+      github: "https://github.com/saoud786/Weather-App"
+    },
     {
       title: "Portfolio Website",
       desc: "Modern responsive portfolio with dark theme and light theme.",
-      features: [
-        
+      details: [
+        "Fully responsive design",
+        "Dark/light mode toggle",
+        "Smooth UI animations",
+        "Modern layout",
+        "Project showcase system"
       ],
       tech: ["React", "CSS", "Responsive Design"],
       image: portImg,
       live: "https://portfolio-ec6ksvh1q-saoudali381-2113s-projects.vercel.app/",
       github: "https://github.com/saoud786/portfolio"
     },
-    {
-      title: "Weather App",
-      desc: "Real-time weather app using API integration.",
-      features: [
-      
-      ],
-      tech: ["JavaScript", "API", "HTML", "CSS"],
-      image: weatherImg,
-      live: "https://weather-app-seven-kappa-26.vercel.app/",
-      github: "https://github.com/saoud786/Weather-App"
-    }
+    // 🔥 NEW PROJECT
+  
   ];
 
   return (
     <section className="projects" id="projects">
       <div className="projects-container">
 
-        {/* HEADER */}
         <div className="projects-header">
           <h2>Projects</h2>
           <p>Some of my recent work showcasing my skills and experience.</p>
         </div>
 
-        {/* GRID */}
         <div className="projects-grid">
           {data.map((item, index) => (
             <div className="project-card" key={index}>
 
-              {/* IMAGE */}
               <div className="project-img">
                 <img src={item.image} alt={item.title} />
+
+                {activeIndex === index && (
+                  <div className="project-overlay">
+                    <ul>
+                      {item.details.map((d, i) => (
+                        <li key={i}>{d}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
 
-              {/* CONTENT */}
               <div className="project-content">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+                <div className="title-row">
+                  <h3>{item.title}</h3>
 
-                {/* 🔥 FEATURES */}
-                <ul className="project-features">
-                  {item.features.map((f, i) => (
-                    <li key={i}>• {f}</li>
-                  ))}
-                </ul>
+                  <button
+                    className="info-btn"
+                    onClick={() => toggleDetails(index)}
+                  >
+                    i
+                    <span className="tooltip">Details</span>
+                  </button>
+                </div>
+
+                <p>{item.desc}</p>
 
                 <div className="project-tech">
                   {item.tech.map((t, i) => (

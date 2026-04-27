@@ -25,6 +25,119 @@
   position: relative;
 }
 
+
+/* TITLE ROW */
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* SMALL INFO BUTTON */
+.info-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  /* background: #f59e0b; */
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.info-btn:hover {
+  transform: scale(1.1);
+}
+
+/* IMAGE CONTAINER */
+.project-img {
+  position: relative;
+}
+
+/* OVERLAY */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* background: rgba(0, 0, 0, 0.9); */
+  color: #fff;
+
+  padding: 20px;
+  /* border-radius: 120px; */
+
+  display: flex;
+  align-items: center;
+}
+
+.project-overlay ul {
+  padding-left: 18px;
+}
+
+.project-overlay li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+/* BUTTON WRAPPER */
+.info-btn {
+  position: relative;
+
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: #f59e0b;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.info-btn:hover {
+  transform: scale(1.1);
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: absolute;
+  bottom: 20%;
+  left: -140%;
+  transform: translateX(-50%);
+
+  /* background: #111; */
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  font-size: 12px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+/* SHOW TOOLTIP ON HOVER */
+.info-btn:hover .tooltip {
+  opacity: 1;
+}
+
+/* SMALL ARROW */
+.tooltip::after {
+  content: "";
+  position: absolute;
+left: 100%;
+
+  transform: translateX(-50%);
+
+  border-width: 6px;
+  border-style: solid;
+  border-color: #111 transparent transparent transparent;
+}
 .projects-header h2::after {
   content: "";
   position: absolute;
@@ -244,7 +357,52 @@ column-gap: 40px; /* 👈 side gap same */
   color: #fff;
   border-color: var(--primary);
 }
+/* ✅ DARK MODE (orange) */
+[data-theme="dark"] .info-btn {
+  background: #f59e0b;
+  color: #000;
+}
 
+/* ✅ LIGHT MODE (purple like Live Demo) */
+[data-theme="light"] .info-btn {
+  background: var(--primary);
+  color: #fff;
+}
+/* 🌙 DARK MODE TOOLTIP */
+[data-theme="dark"] .tooltip {
+  background: #111;
+  color: #fff;
+}
+
+/* 🌞 LIGHT MODE TOOLTIP (MATCH BUTTON 🔥) */
+[data-theme="light"] .tooltip {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ARROW ALSO FIX */
+[data-theme="light"] .tooltip::after {
+  border-color: var(--primary) transparent transparent transparent;
+}
+
+/* 🌙 DARK MODE → ORANGE OVERLAY */
+[data-theme="dark"] .project-overlay {
+  background: rgba(22, 21, 22, 0.15); /* 👈 light orange glass */
+  border: 1px solid rgba(245, 159, 11, 0.4);
+  color: #fff;
+  backdrop-filter: blur(6px); /* 🔥 premium look */
+}
+
+/* 🌞 LIGHT MODE → PURPLE (same as button) */
+/* 🌞 LIGHT MODE → SOFT / TRANSPARENT PURPLE */
+[data-theme="light"] .project-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.75),
+    rgba(139, 92, 246, 0.75)
+  );
+  color: #fff;
+}
 /* =========================
    MOBILE
 ========================= */
