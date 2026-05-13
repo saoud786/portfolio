@@ -7,7 +7,7 @@ const About = () => {
   const [visible, setVisible] = useState(false);
 
   const stats = [
-    { title: "5+", label: "Projects" },
+    { title: "25+", label: "Projects" },
     { title: "React", label: "Core" },
     { title: "UI/UX", label: "Focus" }
   ];

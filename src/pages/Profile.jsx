@@ -33,7 +33,7 @@ const Profile = ({ onClose }) => {
           <p className="pm-role">Frontend Developer</p>
 
           <div className="pm-info">
-            <p><strong>Email:</strong> saoud@example.com</p>
+            <p><strong>Email:</strong> saoudali381@gmail.com</p>
             <p><strong>Location:</strong> India</p>
           </div>
 

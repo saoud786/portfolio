@@ -71,8 +71,8 @@ const Hero = () => {
             </a>
 
           <a 
-  href="/resume.pdf" 
-  download="Saoud_Ali_Resume.pdf"
+  href="/Resume(LinkeIn).pdf" 
+  download="Resume(LinkeIn).pdf"
   className="btn secondary"
 >
   Download Resume

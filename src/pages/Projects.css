@@ -389,7 +389,7 @@ column-gap: 40px; /* 👈 side gap same */
 [data-theme="dark"] .project-overlay {
   background: rgba(22, 21, 22, 0.15); /* 👈 light orange glass */
   border: 1px solid rgba(245, 159, 11, 0.4);
-  color: #fff;
+  color: #1a1919;
   backdrop-filter: blur(6px); /* 🔥 premium look */
 }
 
